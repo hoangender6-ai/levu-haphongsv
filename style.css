@@ -1,0 +1,220 @@
+/* Thiết lập chung và Typography */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333; /* Màu chữ đen than lịch sự */
+  background-color: #f8f8f8; /* Nền trắng kem/xám nhạt tinh tế */
+  margin: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lora", serif; /* Tiêu đề Seriff sang trọng */
+  font-weight: 500;
+  color: #222;
+}
+
+h1 {
+  font-size: 3.5rem; /* Tiêu đề lớn, ấn tượng */
+  margin-bottom: 0.5rem;
+}
+
+section {
+  padding: 80px 5%; /* Khoảng đệm lớn tạo sự thoáng đãng */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Thanh Điều Hướng (Navbar) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #ffffff; /* Nền trắng sạch sẽ */
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 25px;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a3854e; /* Màu Vàng Đồng (Muted Gold) làm điểm nhấn */
+}
+
+/* Nút Kêu Gọi Hành Động (CTA) */
+.cta-button {
+  padding: 8px 20px;
+  border: 1px solid #a3854e;
+  color: #a3854e !important;
+  background: transparent;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.cta-button:hover {
+  background-color: #a3854e;
+  color: #ffffff !important;
+}
+
+/* HERO SECTION - Phong cách điện ảnh */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("hero-background.jpg"); /* THAY ẢNH NỀN CỦA BẠN */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Lớp phủ mờ để chữ nổi bật */
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  color: #fff;
+  font-size: 4.5rem;
+  letter-spacing: 3px;
+}
+
+/* PORTFOLIO SECTION - Lưới thanh lịch, tương tác cuốn hút */
+.portfolio-section h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.portfolio-section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #a3854e;
+  margin: 10px auto 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bóng nhẹ, tinh tế */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hiệu ứng cuốn hút: Phóng to nhẹ khi hover */
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.grid-item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 15px;
+  font-family: "Lora", serif;
+  font-weight: 500;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+}
+
+.grid-item:hover .overlay {
+  transform: translateY(0);
+}
+
+/* ABOUT SECTION - Bố cục tạp chí cao cấp */
+.about-section {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #333; /* Nền tối sang trọng */
+  color: #ccc;
+  font-size: 0.9rem;
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
